@@ -17,7 +17,7 @@ for (i = 0; i <= len; i++) {
     }
 }
 var arlen = arr.length;
-for (j = 0; j < arlen; j++) {
+for (j = 0; j < arlen; j++) {   
     console.log(arr[j],"\n");
 }
 console.log(arr[arr.length - 6],"\n");
