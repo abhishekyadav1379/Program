@@ -1,51 +1,31 @@
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
+#include<string.h>
+// BINARY SEARCH 
 
-struct node
+void search(int arr[], int data, int m, int n)
 {
-	int data;							//Incomplete :(
-	struct node *left;
-	struct node *right;
-};
-
-// ! kdlkhgjdhk
-struct node *root;
-
-void insert()
-{
-	struct node *ptr, *ctr;
-	ptr = (struct node *)malloc(sizeof(struct node *));
-	printf("Enter data : ");
-	scanf("%d", ptr->data);
-	if (root == NULL)
+	if (arr[m] == data)
 	{
-		ptr->left = NULL;
-		ptr->right = NULL;
-		root = ptr;
+		printf("data found at %d", m);
 		return;
 	}
-	ctr = root;
-	while (ctr != NULL)
+	else if (data < arr[m])
 	{
-		ctr = ctr->right;
+		return search(arr, data, m / 2, m);
 	}
-	
-	if (ptr->data > ctr->data)
+	else if (data > arr[m])
 	{
-		ctr->right = ptr;
+		return search(arr, data, m + (n - m) / 2, n);
 	}
-	else
-	{
-		ctr->left = ptr;
-	}
-	ptr->left = NULL;
-	ptr->right = NULL;
-	return;
+	printf("data not found");
 }
 void main()
 {
-	insert();
-	insert();
-	insert();
+	int arr[] = {2, 4, 6, 8, 11, 13, 15, 17, 20, 22, 25};
+	int m, n;
+	n = sizeof(arr) / sizeof(arr[0]);
+	m = n / 2;
+	search(arr, 114, m, n);
 }

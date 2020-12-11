@@ -11,7 +11,6 @@ struct node
 
 struct node *head, *tail;
 
-// Print list
 void Printlist(struct node *ptr)
 {
     while (ptr != NULL)
